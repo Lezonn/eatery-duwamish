@@ -1,0 +1,6 @@
+Progress:
+- Menambah semua fitur pada recipe, tetapi baru get yang dapat digunakan pada view
+- Membuat semua SP untuk recipe
+
+Kendala:
+- Sulit membagi waktu dengan tugas ini, tugas kuliah, dan tugas divisi lain
