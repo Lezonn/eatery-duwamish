@@ -26,5 +26,11 @@ namespace Common.Data
             get { return _recipeName; }
             set { _recipeName = value; }
         }
+        private string _recipeDescription;
+        public string RecipeDescription
+        {
+            get { return _recipeDescription; }
+            set { _recipeDescription = value; }
+        }
     }
 }

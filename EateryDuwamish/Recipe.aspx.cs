@@ -17,6 +17,7 @@ namespace EateryDuwamish
         {
             if (!IsPostBack)
             {
+                ShowNotificationIfExists();
                 if (!string.IsNullOrEmpty(Request.QueryString["ID"]))
                 {
                     GetDishName(Convert.ToInt32(Request.QueryString["ID"]));
@@ -38,11 +39,6 @@ namespace EateryDuwamish
         #endregion
     
         #region FORM MANAGEMENT
-        private void FillForm(RecipeData recipe)
-        {
-            hdfRecipeId.Value = recipe.RecipeID.ToString();
-            txtRecipeName.Text = recipe.RecipeName;
-        }
         private void ResetForm()
         {
             hdfRecipeId.Value = String.Empty;
@@ -92,22 +88,7 @@ namespace EateryDuwamish
         }
         protected void rptRecipe_ItemCommand(object sender, RepeaterCommandEventArgs e)
         {
-            if (e.CommandName == "EDIT")
-            {
-                LinkButton lbRecipeName = (LinkButton)e.Item.FindControl("lbRecipeName");
-
-                int recipeID = Convert.ToInt32(e.CommandArgument.ToString());
-                RecipeData recipe = new RecipeSystem().GetRecipeByID(recipeID);
-                FillForm(new RecipeData
-                {
-                    RecipeID = recipe.RecipeID,
-                    RecipeName = recipe.RecipeName
-                });
-                litFormType.Text = $"UBAH: {lbRecipeName.Text}";
-                pnlFormRecipe.Visible = true;
-                txtRecipeName.Focus();
-            }
-            else if (e.CommandName == "DETAIL")
+            if (e.CommandName == "DETAIL")
             {
                 int recipeID = Convert.ToInt32(e.CommandArgument.ToString());
                 Response.Redirect("RecipeDetail.aspx?ID=" + recipeID);
@@ -149,7 +130,7 @@ namespace EateryDuwamish
                 if (rowAffected <= 0)
                     throw new Exception("No Data Deleted");
                 Session["delete-success"] = 1;
-                Response.Redirect("Dish.aspxID=" + Convert.ToInt32(Request.QueryString["ID"]));
+                Response.Redirect("Recipe.aspx?ID=" + Convert.ToInt32(Request.QueryString["ID"]));
             }
             catch (Exception ex)
             {

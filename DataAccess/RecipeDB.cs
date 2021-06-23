@@ -69,6 +69,7 @@ namespace DataAccess
                             recipe = new RecipeData();
                             recipe.RecipeID = Convert.ToInt32(Reader["RecipeID"]);
                             recipe.RecipeName = Convert.ToString(Reader["RecipeName"]);
+                            recipe.RecipeDescription = Convert.ToString(Reader["RecipeDescription"]);
                         }
                     }
                     SqlConn.Close();
