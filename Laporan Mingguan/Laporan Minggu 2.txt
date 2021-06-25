@@ -1,0 +1,7 @@
+Progress:
+- Menambahkan fitur detail dari setiap recipe yaitu ingredient dari setiap recipe
+- Menambahkan recipe description
+- Semua fitur seharusnya sudah berjalan dengan lancar sesuai dengan prototype
+
+Kendala:
+- Untuk minggu 2 kendalanya mungkin lebih ke teknikal karena menyesuaikan dengan penggunaan framework baru yaitu asp.net webform
