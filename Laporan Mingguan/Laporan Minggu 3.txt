@@ -1,0 +1,6 @@
+Project eatery duwamish ini selesai pada tanggal 23 Juni 2021.
+
+Secara keseluruhan kendala yang saya alami selama pembuatan project yaitu:
+- Kesulitan membagi waktu saat minggu pertama, karena kebetulan banyak deadline projek kuliah dan juga tugas divisi lain.
+- Sedikit lama untuk mencari error saat terjadi bug.
+- Butuh waktu untuk beradaptasi dengan code convention.
